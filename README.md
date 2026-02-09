@@ -1,7 +1,7 @@
 # How to Build a Retrieval-Augmented Generation (RAG) Chatbot
  
 ### Introduction:
-This document provides step-by-step instructions to build a RAG chatbot and system to allow users to chat with their own pdf files. This guide will cover environment setup and **vector database** initialization. This guide will not cover advanced Machine Learning theory, or custom model training.
+This document provides step-by-step instructions to build a RAG chatbot and system to allow users to chat with their own pdf files. This guide will cover environment setup and chatbot database initialization. This guide will not cover advanced Machine Learning theory, or custom model training.
  
 ### Audience:
 This document is meant for anyone that wants to leverage Large Language Models (LLMs) to analyze and interact with their personal files, without uploading them to public, third-party interfaces that have training data on information that is outside of what has been provided by the user. No advanced coding degree is required, however users should have a basic comfort level with installing software via a terminal. In addition, users to be sure to note that while this system provides a high level of accuracy for their uploaded files, as it does not have access to the data that public third-party chatbots have, this tool is designed for context-specific retrieval, and not general-purpose knowledge.
@@ -15,7 +15,7 @@ LLMs are trained on vast amounts of public data, but they don’t know exactly w
 - Up-to-Date (as soon as you add more files, your AI knows and can use that)
  
 ### Prerequisites and Environment Setup:
-This project requires specific hardware and software configurations to work. This set of instructions will ensure that the RAG runs smoothly on a 16GB+ **MacBook**, however the RAG chatbot can be run on Linux, Windows, or other operating systems as well and this is simply the model the guide will demonstrate with. 
+This project requires specific hardware and software configurations to work. This set of instructions will ensure that the RAG runs smoothly on a 16GB+ MacBook, however the RAG chatbot can be run on Linux, Windows, or other operating systems as well and this is simply the model the guide will demonstrate with. 
 
 **Software Installation Guide:**
 1. To download Ollama, go to [Ollama.com](https://ollama.com) and click the download button. Ollama is the open-source tool that allows users to download, run, and manage LLMs locally on Windows, MacOS, and Linux while ensuring data privacy.
@@ -30,7 +30,7 @@ This project requires specific hardware and software configurations to work. Thi
    > **Note for advanced users:** Different models offer various benefits regarding speed and reasoning. You can research and choose different models at [Ollama's library](https://ollama.com/library) based on your hardware capabilities.
 
 4. Ensure that Python 3.10 or higher is installed on your computer by typing `python3 --version` in your Terminal. If it is not installed, follow the steps below:
-   * a. Go to Python.org and download the macOS 64-bit universal2 installer for the latest stable version (currently Python 3.14.3).
+   * a. Go to [Python.org](https://python.org) and download the macOS 64-bit universal2 installer for the latest stable version (currently Python 3.14.3).
    * b. Open the downloaded .pkg file and follow the on-screen prompts. You will need to enter your Mac password.
    * c. Once the installation finishes, a folder will open in Finder. Double-click the file named Install Certificates.command. This allows Python to download the AI models securely.
    * d. Open your Terminal and type `python3 --version`. You should see your Python version in the output.
@@ -189,4 +189,4 @@ Testing ensures that your RAG system is actually reading your files and not just
 ---
 
 ### Conclusion:
-By following this guide, you have successfully built a private, local RAG chatbot. This system allows you to gain insights from your personal data with high accuracy and full privacy, bypassing the need for third-party cloud interfaces.
+By following this guide, you have successfully built a private, local RAG chatbot. This system allows you to gain insights from your personal data with high accuracy and full privacy, bypassing the need for third-party cloud interfaces. However, you can fine-tune the model by adjusting the temperature value in chat.py; increasing it encourages creativity and the use of outside information not simply in your uploaded pdfs but raises the risk of hallucinations (inaccurate information), while decreasing it makes the answers more precise and factual.
