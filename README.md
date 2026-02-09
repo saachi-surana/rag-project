@@ -18,7 +18,7 @@ LLMs are trained on vast amounts of public data, but they don’t know exactly w
 This project requires specific hardware and software configurations to work. This set of instructions will ensure that the RAG runs smoothly on a 16GB+ **MacBook**, however the RAG chatbot can be run on Linux, Windows, or other operating systems as well and this is simply the model the guide will demonstrate with. 
 
 **Software Installation Guide:**
-1. To download Ollama, go to Ollama.com and click the download button. Ollama is the open-source tool that allows users to download, run, and manage LLMs locally on Windows, MacOS, and Linux while ensuring data privacy.
+1. To download Ollama, go to [Ollama.com](https://ollama.com) and click the download button. Ollama is the open-source tool that allows users to download, run, and manage LLMs locally on Windows, MacOS, and Linux while ensuring data privacy.
 2. Once downloaded, double-click on the downloaded file and then drag the Ollama app icon to the Applications folder.
 3. Open the Terminal on your computer (Cmd-Space to Spotlight Search) and run these two commands:
    ```bash
@@ -30,21 +30,21 @@ This project requires specific hardware and software configurations to work. Thi
    > **Note for advanced users:** Different models offer various benefits regarding speed and reasoning. You can research and choose different models at [Ollama's library](https://ollama.com/library) based on your hardware capabilities.
 
 4. Ensure that Python 3.10 or higher is installed on your computer by typing `python3 --version` in your Terminal. If it is not installed, follow the steps below:
-   a. Go to Python.org and download the macOS 64-bit universal2 installer for the latest stable version (currently Python 3.14.3).
-   b. Open the downloaded .pkg file and follow the on-screen prompts. You will need to enter your Mac password.
-   c. Once the installation finishes, a folder will open in Finder. Double-click the file named Install Certificates.command. This allows Python to download the AI models securely.
-   d. Open your Terminal and type `python3 --version`. You should see your Python version in the output.
+   * a. Go to Python.org and download the macOS 64-bit universal2 installer for the latest stable version (currently Python 3.14.3).
+   * b. Open the downloaded .pkg file and follow the on-screen prompts. You will need to enter your Mac password.
+   * c. Once the installation finishes, a folder will open in Finder. Double-click the file named Install Certificates.command. This allows Python to download the AI models securely.
+   * d. Open your Terminal and type `python3 --version`. You should see your Python version in the output.
 
 5. If you do not have Visual Studio Code installed, follow the steps below:
-   a. Open your browser and go to code.visualstudio.com
-   b. Click the downward arrow next to the "Download for Mac" button.
-   c. Select the Apple Silicon (zip) or Universal version. Apple M chip users should select the Apple Silicon build for fastest performance.
-   d. Locate the downloaded .zip file in your Downloads folder and double-click it. This will extract the "Visual Studio Code" application icon.
-   e. Drag the Visual Studio Code icon into your Applications folder, the same way you did for Ollama.
-   f. Open VS Code from your Applications folder. When macOS asks if you want to open an app downloaded from the internet, click Open.
-   g. Press `Cmd + Shift + P` to open the Command Palette.
-   h. Type "shell command".
-   i. Select Shell Command: Install 'code' command in PATH. You will see a small notification in the bottom right corner confirming the command was successfully installed.
+   * a. Open your browser and go to [code.visualstudio.com](https://code.visualstudio.com)
+   * b. Click the downward arrow next to the "Download for Mac" button.
+   * c. Select the Apple Silicon (zip) or Universal version. Apple M chip users should select the Apple Silicon build  for fastest performance.
+   * d. Locate the downloaded .zip file in your Downloads folder and double-click it. This will extract the "Visual Studio Code" application icon.
+   * e. Drag the Visual Studio Code icon into your Applications folder, the same way you did for Ollama.
+   * f. Open VS Code from your Applications folder. When macOS asks if you want to open an app downloaded from the internet, click Open.
+   * g. Press `Cmd + Shift + P` to open the Command Palette.
+   * h. Type "shell command".
+   * i. Select Shell Command: Install 'code' command in PATH. You will see a small notification in the bottom right corner confirming the command was successfully installed.
    
 6. To create your workspace, create a folder on your Desktop named `rag-project`.
 7. Open this folder in VS Code, and create a virtual environment by opening the Terminal in VS Code (Click New Terminal, found in the top right bar of VS Code) and typing:
