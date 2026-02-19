@@ -1,10 +1,10 @@
 # How to Build a Retrieval-Augmented Generation (RAG) Chatbot
  
 ### Introduction:
-This document provides step-by-step instructions to build a RAG chatbot and system to allow users to chat with their own pdf files. This guide will cover environment setup and chatbot database initialization. This guide will not cover advanced Machine Learning theory, or custom model training.
+This document provides step-by-step instructions to build a RAG chatbot and system to allow users to chat with their own PDF files. This guide covers environment setup and chatbot database initialization. This guide does not cover advanced Machine Learning theory, or custom model training.
  
 ### Audience:
-This document is meant for anyone that wants to leverage Large Language Models (LLMs) to analyze and interact with their personal files, without uploading them to public, third-party interfaces that have training data on information that is outside of what has been provided by the user. No advanced coding degree is required, however users should have a basic comfort level with installing software via a terminal. In addition, users to be sure to note that while this system provides a high level of accuracy for their uploaded files, as it does not have access to the data that public third-party chatbots have, this tool is designed for context-specific retrieval, and not general-purpose knowledge.
+This document is meant for anyone that wants to leverage Large Language Models (LLMs) to analyze and interact with their personal files, without uploading them to public, third-party interfaces that have training data on information that is outside of what has been provided by the user. No advanced coding experience is required, however users should have a basic comfort level with installing software via a terminal. In addition, users should note that while this system provides a high level of accuracy for their uploaded files, it does not have access to the data that public third-party chatbots have. So, this tool is designed for context-specific retrieval, and not general-purpose knowledge.
  
 ### How RAG Works:
 LLMs are trained on vast amounts of public data, but they don’t know exactly what is in your files and folders. RAG bridges this gap, retrieving information specifically from your files without you having to retrain an AI, something that is both expensive and difficult, and instead acts as a search engine of your files for the AI.
@@ -12,14 +12,14 @@ LLMs are trained on vast amounts of public data, but they don’t know exactly w
 **Why Use RAG:**
 - Privacy (your data never leaves your computer)
 - Accuracy (your answers are based exactly on the information you provide)
-- Up-to-Date (as soon as you add more files, your AI knows and can use that)
+- Up-to-Date (as soon as you add more files, your AI knows and can use those)
  
 ### Prerequisites and Environment Setup:
-This project requires specific hardware and software configurations to work. This set of instructions will ensure that the RAG runs smoothly on a 16GB+ MacBook, however the RAG chatbot can be run on Linux, Windows, or other operating systems as well and this is simply the model the guide will demonstrate with. 
+This project requires specific software to be downloaded in order to work. This set of instructions will ensure that the RAG runs smoothly on a 16GB+ MacBook, however the RAG chatbot can be run on Linux, Windows, or other operating systems as well and this is simply the model the guide will demonstrate with. If you have a different model and different operating system, there is a note below in the software installation guide with a link to other models to use, that you can pick based on your hardware specifications.
 
 **Software Installation Guide:**
-1. To download Ollama, go to [Ollama.com](https://ollama.com) and click the download button. Ollama is the open-source tool that allows users to download, run, and manage LLMs locally on Windows, MacOS, and Linux while ensuring data privacy.
-2. Once downloaded, double-click on the downloaded file and then drag the Ollama app icon to the Applications folder.
+1. To download Ollama, go to [Ollama.com](https://ollama.com) and click the download button in the upper right corner. Then, click the download button again in the center. Ollama is the open-source tool that allows users to download, run, and manage LLMs locally on Windows, MacOS, and Linux while ensuring data privacy.
+2. Once downloaded, double-click on the downloaded file and then drag the Ollama app icon to the Applications folder. Then, double click on the Ollama app icon in order to open it.
 3. Open the Terminal on your computer (Cmd-Space to Spotlight Search) and run these two commands:
    ```bash
    ollama pull llama3.1:8b
@@ -37,17 +37,15 @@ This project requires specific hardware and software configurations to work. Thi
 
 5. If you do not have Visual Studio Code installed, follow the steps below:
    * a. Open your browser and go to [code.visualstudio.com](https://code.visualstudio.com)
-   * b. Click the downward arrow next to the "Download for Mac" button.
-   * c. Select the Apple Silicon (zip) or Universal version. Apple M chip users should select the Apple Silicon build  for fastest performance.
-   * d. Locate the downloaded .zip file in your Downloads folder and double-click it. This will extract the "Visual Studio Code" application icon.
-   * e. Drag the Visual Studio Code icon into your Applications folder, the same way you did for Ollama.
-   * f. Open VS Code from your Applications folder. When macOS asks if you want to open an app downloaded from the internet, click Open.
-   * g. Press `Cmd + Shift + P` to open the Command Palette.
-   * h. Type "shell command".
-   * i. Select Shell Command: Install 'code' command in PATH. You will see a small notification in the bottom right corner confirming the command was successfully installed.
+   * b. Click the download button in the center of the screen.
+   * c. Drag the Visual Studio Code icon into your Applications folder, the same way you did for Ollama. 
+   * d. Open VS Code from your Applications folder by double-clicking it. When macOS asks if you want to open an app downloaded from the internet, click Open.
+   * e. Press `Cmd + Shift + P` to open the Command Palette.
+   * f. Type "shell command".
+   * g. Select Shell Command: Install 'code' command in PATH. You will see a small notification in the bottom right corner confirming the command was successfully installed.
    
 6. To create your workspace, create a folder on your Desktop named `rag-project`.
-7. Open this folder in VS Code, and create a virtual environment by opening the Terminal in VS Code (Click New Terminal, found in the top right bar of VS Code) and typing:
+7. Open this folder in VS Code, and create a virtual environment by opening the Terminal in VS Code (Click New Terminal, found in the top left bar of VS Code) and typing:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
